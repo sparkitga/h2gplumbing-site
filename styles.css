@@ -1,4 +1,4 @@
-/* Clean white theme with blue accents */
+/* Clean white theme with blue accents and hover effects */
 
 /* Color system */
 :root {
@@ -33,6 +33,12 @@ html, body {
   margin: 20px auto;
   max-width: 1100px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover, section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
 }
 
 /* Headings */
@@ -48,9 +54,11 @@ a {
   color: var(--accent);
   text-decoration: none;
   font-weight: 500;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 a:hover {
-  text-decoration: underline;
+  color: #0056b3; /* darker blue */
+  border-bottom: 2px solid var(--accent);
 }
 
 /* Buttons */
@@ -62,11 +70,27 @@ button, .btn {
   border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 button:hover, .btn:hover {
   background-color: #ffffff;
   color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,123,255,0.2);
+}
+
+/* Service cards */
+.card {
+  background-color: var(--card);
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+  border-color: #0056b3; /* stronger blue */
 }
 
 /* Forms */
@@ -76,11 +100,12 @@ input, textarea {
   margin: 10px 0;
   border: 2px solid var(--border);
   border-radius: 6px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 input:focus, textarea:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 4px rgba(0,123,255,0.3);
+  box-shadow: 0 0 6px rgba(0,123,255,0.3);
 }
 
 /* Footer */
